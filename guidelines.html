@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guidelines</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Change 'styles.css' to your actual CSS file name -->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Title Verification System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guidelines.html">Guidelines</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faqs.html">FAQs</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Guidelines Content -->
+    <div class="container mt-5">
+        <h1>Guidelines for Using the Title Verification System</h1>
+        <p>Follow these instructions to verify or generate a title:</p>
+        
+        <h2>Step 1: Enter Your Title</h2>
+        <p>Enter the title you wish to verify or generate in the input box. The title should be at least 6 characters long. If your title is too short, you will be prompted to try again.</p>
+        <p><strong>Example:</strong> <em>ShivaniMudiga</em> is valid. However, <em>abc</em> will show an error since it is less than 6 characters.</p>
+        
+        <h2>Step 2: Title Verification Rules</h2>
+        <ul>
+            <li><strong>Disallowed Words:</strong> Your title should not contain disallowed words such as "police", "crime", "corruption", etc.</li>
+            <li><strong>Disallowed Prefixes/Suffixes:</strong> Prefixes like "The", "India", "News" are not allowed if they result in a title too similar to an existing one.</li>
+            <li><strong>Existing Titles:</strong> The system will reject titles that closely resemble existing titles in the database (e.g., "Hindu", "Indian Express").</li>
+            <li><strong>Combining Existing Titles:</strong> Creating a new title by combining parts of existing titles is not allowed. For example, if "Hindu" and "Indian Express" exist, "Hindu Indian Express" is not allowed.</li>
+            <li><strong>Variations in Meaning:</strong> Titles with similar meanings in different languages or with periodicity modifications (e.g., Daily, Weekly) will also be rejected.</li>
+        </ul>
+        
+        <h2>Step 3: Suggestions</h2>
+        <p>If the system finds any disallowed parts in your title, it will provide a suggestion by removing those parts. If the cleaned title is still valid (at least 6 characters), you will be given a suggestion.</p>
+        <p><strong>Example:</strong> If you input <em>"ShivaniMudigaPolice"</em>, the system will suggest <em>"ShivaniMudiga"</em> after removing the disallowed word "Police".</p>
+        
+        <h2>Step 4: Title Generation</h2>
+        <p>When generating a title, the system will take your input prompt and create a title that meets the verification rules.</p>
+        <p><strong>Example:</strong> If you input <em>"I want a title for my Expression Tracker project"</em>, the system will suggest <em>"Project Expression Tracker"</em>.</p>
+        
+        <h2>Step 5: Probability Score</h2>
+        <p>After verification, the system will provide a probability score indicating how likely the title is to be verified based on similarity checks. If the score is too low, modify your title and try again.</p>
+        
+        <a href="index.html" class="btn btn-primary mt-4">Go Back to Home</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

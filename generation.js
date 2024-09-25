@@ -38,7 +38,7 @@ function generateTitleFromPrompt(prompt) {
 // Function to extract significant keywords from the prompt
 function extractKeywords(prompt) {
     // Define words to ignore (common English words)
-    const ignoreWords = ["i", "want", "a", "for", "my", "project", "the", "title", "this"];
+    const ignoreWords = ["i", "want", "a", "for", "my", "project", "the", "title", "this","create","generate","lets","build","is"];
     
     // Convert the prompt to lowercase, split into words, and filter out ignored words
     let words = prompt.toLowerCase().split(" ");

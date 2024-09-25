@@ -1,0 +1,44 @@
+/* Global font size for the whole project */
+body {
+    font-size: 14px; /* Adjust the font size as needed */
+    line-height: 1.6; /* Adjust line height for better readability */
+    font-family: Arial, sans-serif; /* Change this to any preferred font */
+}
+
+/* Optional: You can also reduce the font size for specific headings */
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3, h4, h5, h6 {
+    font-size: 16px;
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+    font-size: 14px; /* Adjust font size of navbar links */
+}
+
+/* Button text */
+.btn {
+    font-size: 14px; /* Adjust font size of buttons */
+}
+
+/* Adjust alert feedback messages */
+.alert {
+    font-size: 14px; /* Feedback messages font size */
+}
+
+/* Adjust font size for input fields and forms */
+input, select, textarea {
+    font-size: 14px; /* Adjust input and form text */
+}
+
+/* Adjust probability bar text */
+#probability {
+    font-size: 14px; /* Adjust font size for probability display */
+}
