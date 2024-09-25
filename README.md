@@ -4,6 +4,7 @@ This project is a basic prototype for a Title Verification System, allowing user
 #Features:-
 Input as Text: Users can enter a title as text and submit it.
 File Upload (Coming Soon): A button allows users to attempt file uploads.
+Title generator(Our unique feature): We have also added a feature where it generates a title for the context given by the user.
 Result: After submitting a text title, you can view the status(accepted/rejected) and the probability score of given title.
 Currently, the system supports text input and provides placeholders for future functionality.
 #Technologies Used:-
