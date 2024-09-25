@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title Verification System</title>
-     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-     <link rel="stylesheet" href="style.css">
-       
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensure the body and html take up full height */
+        html, body {
+            height: 90%;
+        }
+
+        /* Custom styling to center the content */
+        .center-container {
+            height: 100%; /* Full height for vertical centering */
+        }
+    </style>
 </head>
 <body>
 
@@ -35,11 +45,13 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container text-center">
-        <h1>Welcome to the Title Verification System</h1>
-        <p class="lead">Please select an option below:</p>
-        <a href="title_verification.html" class="btn btn-primary">Title Verification</a>
-        <a href="title_generation.html" class="btn btn-secondary">Title Generation</a>
+    <div class="d-flex justify-content-center align-items-center center-container">
+        <div class="container text-center">
+            <h1>Welcome to the Title Verification System</h1>
+            <p class="lead">Please select an option below:</p>
+            <a href="title_verification.html" class="btn btn-primary">Title Verification</a>
+            <a href="title_generation.html" class="btn btn-secondary">Title Generation</a>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
