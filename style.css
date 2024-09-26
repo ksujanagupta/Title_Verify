@@ -3,6 +3,15 @@ body {
     font-size: 14px; /* Adjust the font size as needed */
     line-height: 1.6; /* Adjust line height for better readability */
     font-family: Arial, sans-serif; /* Change this to any preferred font */
+    background-color: #82c0cc; /* Set background color to light blue */
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the body and html take up full height */
+html, body {
+    height: 100%; /* Full height */
+    background-color: #82c0cc; /* Set background color to light blue */
 }
 
 /* Optional: You can also reduce the font size for specific headings */
@@ -24,9 +33,21 @@ h3, h4, h5, h6 {
 }
 
 /* Button text */
+/* Button text and color */
 .btn {
     font-size: 14px; /* Adjust font size of buttons */
+    background-color: rgba(224, 228, 233, 0.738); /* Set background color to light pink */
+    border: none; /* Set border color to light pink */
+    color: black; /* Set text color to white for better contrast */
 }
+
+/* Optional: Change hover effect for buttons */
+.btn:hover {
+    background-color: #3d7cb0; /* Slightly darker shade of light pink */
+    border-color: #ffb6c1; /* Change border on hover */
+    color: white; /* Ensure text color remains white */
+}
+
 
 /* Adjust alert feedback messages */
 .alert {
@@ -41,4 +62,10 @@ input, select, textarea {
 /* Adjust probability bar text */
 #probability {
     font-size: 14px; /* Adjust font size for probability display */
+}
+
+/* Custom styling to center the content */
+.center-container {
+    height: 100%; /* Full height for vertical centering */
+    background-color: transparent; /* Let the body background color show */
 }
