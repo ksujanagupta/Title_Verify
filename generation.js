@@ -4,13 +4,13 @@ const disallowedWords = ["Police", "Crime", "Corruption", "CBI", "CID", "Army", 
 // Sample existing titles
 const existingTitles = ["Hindu Indian Express", "Samachar Times", "India News", "Daily Chronicle", "Morning Times"];
 
-// Simple synonym map for word replacement
+// Simple synonym map for word replacement based on context
 const synonymMap = {
-    "Tracker": ["Monitor", "Log", "Recorder"],
-    "Expression": ["Emotion", "Sentiment", "Statement"],
-    "System": ["Network", "Platform", "Service"],
-    "Generation": ["Creation", "Formation", "Production"],
-    "Title": ["Heading", "Name", "Label"]
+    "India": ["Hindustan", "Bharat"],
+    "Newspaper": ["Chronicle", "Times", "Journal", "Herald"],
+    "Mars": ["Fourth Planet", "Red Planet", "Ares"],
+    "Project": ["Task", "Assignment", "Endeavor"],
+    "Morning": ["Dawn", "Daybreak", "Sunrise"]
 };
 
 // Extract important keywords and form a meaningful title
@@ -29,8 +29,9 @@ function generateTitleFromPrompt(prompt) {
     // Step 3: Replace words with synonyms where applicable
     keywords = replaceWithSynonyms(keywords);
 
-    // Step 4: Rebuild the title with random ordering
-    let generatedTitle = reorderForTitle(keywords);
+    // Step 4: Identify the context and adjust the title generation logic accordingly
+    let context = identifyContext(keywords);
+    let generatedTitle = reorderForTitle(keywords, context);
 
     // Step 5: If the title is less than 6 characters or empty, reject it
     if (generatedTitle.length < 6) {
@@ -49,7 +50,7 @@ function generateTitleFromPrompt(prompt) {
 // Function to extract significant keywords from the prompt
 function extractKeywords(prompt) {
     // Define words to ignore (common English words)
-    const ignoreWords = ["i", "want", "a", "for", "my", "project", "the", "title", "this", "create", "generate", "lets", "build", "is"];
+    const ignoreWords = ["i", "want", "a", "for", "my", "the", "title", "this", "create", "generate", "lets", "build", "is"];
     
     // Convert the prompt to lowercase, split into words, and filter out ignored words
     let words = prompt.toLowerCase().split(" ");
@@ -71,15 +72,42 @@ function replaceWithSynonyms(keywords) {
     });
 }
 
-// Function to reorder extracted keywords to form a meaningful title
-function reorderForTitle(keywords) {
-    // Randomly shuffle the keywords for more varied title generation
-    for (let i = keywords.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [keywords[i], keywords[j]] = [keywords[j], keywords[i]];
+// Function to identify context (newspaper, project, etc.)
+function identifyContext(keywords) {
+    // Check for keywords that indicate context
+    if (keywords.includes("Newspaper") || keywords.includes("Times") || keywords.includes("Chronicle")) {
+        return "newspaper";
+    } else if (keywords.includes("Project") || keywords.includes("Task")) {
+        return "project";
+    } else if (keywords.includes("Mars") || keywords.includes("Planet")) {
+        return "mars";
     }
-    // Return the shuffled keywords as the title
-    return keywords.join(" ");
+    // Default to a general context
+    return "general";
+}
+
+// Function to reorder extracted keywords to form a meaningful title based on context
+function reorderForTitle(keywords, context) {
+    if (context === "newspaper") {
+        // Example: For a newspaper, we might use "India Morning" or "Morning Times"
+        if (keywords.includes("India")) {
+            return "India " + (keywords.includes("Morning") ? "Morning" : "Times");
+        } else {
+            return keywords.join(" ") + " Times";
+        }
+    } else if (context === "project") {
+        // Example: For a project, we can create titles like "Fourth Planet Exploration"
+        let projectIndex = keywords.indexOf("Project");
+        if (projectIndex !== -1) {
+            keywords.splice(projectIndex, 1); // Remove "Project"
+        }
+        return keywords.join(" ");
+    } else if (context === "mars") {
+        return "Project " + keywords.join(" ");
+    } else {
+        // Default case: General context, just return the keywords
+        return keywords.join(" ");
+    }
 }
 
 // Event listener for form submission
